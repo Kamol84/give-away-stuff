@@ -36,6 +36,9 @@ public class Gift {
     @NotBlank
     private GiftForWhom forWhom;
 
+    @NotBlank
+    private String organization; //TODO: entity for organizations
+
     private String addres; //TODO: make model/entity for address
 
     @NotBlank

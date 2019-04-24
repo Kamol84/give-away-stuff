@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Gift> gifts = new HashSet<>();
 
-    @NotBlank
-    private String role; //TODO: make model/entity role, make default user
+    @ManyToMany
+    private Collection<Role> roles;
 
 }
