@@ -1,6 +1,7 @@
 package pl.kamol84.giveawaystuff.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -12,6 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name = "user")
 @Data
+@NoArgsConstructor
 public class User {
 
     @Id
