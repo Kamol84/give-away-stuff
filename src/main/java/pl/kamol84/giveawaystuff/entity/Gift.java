@@ -1,6 +1,7 @@
 package pl.kamol84.giveawaystuff.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import pl.kamol84.giveawaystuff.enums.GiftCategory;
 import pl.kamol84.giveawaystuff.enums.GiftCity;
 import pl.kamol84.giveawaystuff.enums.GiftForWhom;
@@ -15,6 +16,7 @@ import java.time.LocalTime;
 @Entity
 @Table(name = "gift")
 @Data
+@NoArgsConstructor
 public class Gift {
 
     @Id
@@ -30,7 +32,7 @@ public class Gift {
 
     @Enumerated(EnumType.STRING)
     @NotBlank
-    private GiftCity city; //TODO: leave Enum or change to entity?
+    private GiftCity city; //TODO: change from enum to entity for GiftCity
 
     @Enumerated(EnumType.STRING)
     @NotBlank
@@ -39,7 +41,7 @@ public class Gift {
     @NotBlank
     private String organization; //TODO: entity for organizations
 
-    private String addres; //TODO: make model/entity for address
+    private String address; //TODO: make entity for address
 
     @NotBlank
     @Future

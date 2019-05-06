@@ -1644,6 +1644,10 @@ footer .bottom-line--icons a img {
   margin-bottom: 0;
 }
 
+.login-error{
+  color: #D00000;
+}
+
 /* line 52, scss/style.scss */
 .form--steps h3 {
   margin: 0;

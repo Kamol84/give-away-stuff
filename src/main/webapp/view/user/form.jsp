@@ -1,5 +1,5 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="header_form.jsp" %>
 <section class="form--steps">
     <div class="form--steps-instructions">
         <div class="form--steps-container">
@@ -325,3 +325,5 @@
         </form>
     </div>
 </section>
+
+<%@include file="../base/footer.jsp" %>
