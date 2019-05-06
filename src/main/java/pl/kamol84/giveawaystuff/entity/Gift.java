@@ -32,7 +32,7 @@ public class Gift {
 
     @Enumerated(EnumType.STRING)
     @NotBlank
-    private GiftCity city; //TODO: do entity
+    private GiftCity city; //TODO: change from enum to entity for GiftCity
 
     @Enumerated(EnumType.STRING)
     @NotBlank

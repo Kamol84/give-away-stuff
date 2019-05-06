@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="base/header.jsp" %>
 <body>
@@ -5,12 +7,20 @@
 
 <section class="login-page">
     <h2>Zaloguj się</h2>
-    <form method="post">
+    <h3 class="login-error">
+        <c:if test="${error}">
+            Nieprawidłowy login lub hasło.
+        </c:if>
+        </h3>
+    <form:form modelAttribute="user"
+               action="${pageContext.request.contextPath}/login"
+               method="post">
+
         <div class="form-group">
-            <input type="email" name="email" placeholder="Email"/>
+            <form:input type="email" name="email" placeholder="Email" path="email"/>
         </div>
         <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło"/>
+            <form:input type="password" name="password" placeholder="Hasło" path="password"/>
             <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
 
@@ -18,7 +28,7 @@
             <a href="/register" class="btn btn--without-border">Załóż konto</a>
             <button class="btn" type="submit">Zaloguj się</button>
         </div>
-    </form>
+    </form:form>
 </section>
 
 <%@include file="base/footer.jsp" %>

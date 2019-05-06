@@ -32,7 +32,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Gift> gifts = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Role> roles;
 
 }
