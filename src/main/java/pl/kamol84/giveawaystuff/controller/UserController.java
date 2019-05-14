@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(path = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/user")
 @Secured({"ROLE_USER", "ROLE_ADMIN"})
-
 public class UserController {
 
 
