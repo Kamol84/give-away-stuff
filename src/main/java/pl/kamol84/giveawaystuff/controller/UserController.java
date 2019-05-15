@@ -13,7 +13,7 @@ public class UserController {
 
 
     @GetMapping("/form")
-    public String login() {
+    public String form() {
         return "user/form";
     }
 

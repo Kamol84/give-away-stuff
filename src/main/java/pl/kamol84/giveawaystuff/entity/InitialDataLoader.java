@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.kamol84.giveawaystuff.repository.RoleRepository;
 import pl.kamol84.giveawaystuff.repository.UserRepository;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 @Component
@@ -37,11 +38,19 @@ public class InitialDataLoader implements ApplicationListener<ContextRefreshedEv
         createRoleIfNotFound("ROLE_USER");
 
         Role adminRole = roleRepository.findByName("ROLE_ADMIN");
+        Role userRole = roleRepository.findByName("ROLE_USER");
+        User userAdmin = new User();
+        userAdmin.setEmail("Test@test.com");
+        userAdmin.setPassword(passwordEncoder.encode("test"));
+        userAdmin.setRoles(Arrays.asList(adminRole));
+        userRepository.save(userAdmin);
+
         User user = new User();
-        user.setEmail("Test@test.com");
+        user.setEmail("kamil@gmail.com");
         user.setPassword(passwordEncoder.encode("test"));
-        user.setRoles(Arrays.asList(adminRole));
+        user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
+
 
         alreadySetup = true;
     }
